@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<title>{{title}}</title>
+<h1>Filmoteca</h1>
+    <p>Aqui podra ver algunos directores y peliculas creadas por ellos.</p>
+
+    <h3>La biblioteca tiene las siguientes peliculas:</h3>
+    <ul>
+        <li>Peliculas en total: {{num_movies}}</li>
+        <ul>
+        {% for i in directors %}
+            <li style="margin-top:10px"><a href="director/{{i.lastName}} {{i.firstName}}">{{i.firstName}} {{i.lastName}}</a></li>
+        {% endfor %}
+        </ul>
+    </ul>
+
+    <hr/>
+
+    <h3>Cantidad de directores de cine registrados: {{num_directors}}</h3>
+    <ul style="margin-top:20px">
+        <li>Peliculas en total: {{num_movies}}</li>
+        <ul>
+        {% for i in movies %}
+            <li style="margin-top:10px">{{i.title}}</li>
+        {% endfor %}
+        </ul>
+    </ul>
+
+{% endblock %}

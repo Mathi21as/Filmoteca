@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<title>{{title}}</title>
+<h1>{{title}} - Director de cine</h1>
+    <p>En esta pagina se mostraran las peliculas del director {{title}}</p>
+<h2>Contenido dinamico</h2>
+    <p>La biblioteca tiene las siguientes peliculas:</p>
+    <ul>
+        <li>Peliculas: {{num_movies}}</li>
+        <ul>
+            {% for i in movies %}
+                <li style="margin-top:10px">{{i.title}}</li>
+            {% endfor %}
+        </ul>
+    </ul>
+
+{% endblock %}
